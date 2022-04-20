@@ -39,6 +39,7 @@ jobs:
             lcov -t "banking" -o lcov.info -c -d .
             lcov --remove lcov.info '/home/runner/work/lab5/lab05/third-party/gtest/*' -o lcov.info
             lcov --remove lcov.info '/usr/include/*' -o lcov.info
+            lcov --remote lcov.info '/home/runner/work/lab5.0/lab5.0/tests/test.cpp/*' -o lcov.info
             
 
 
@@ -63,6 +64,7 @@ jobs:
            lcov -t "banking" -o lcov.info -c -d .
            lcov --remove lcov.info '/home/runner/work/lab5.0/lab5.0/third-party/gtest/*' -o lcov.info ###
            lcov --remove lcov.info '/usr/include/*' -o lcov.info
+           lcov --remote lcov.info '/home/runner/work/lab5.0/lab5.0/tests/test.cpp/*' -o lcov.info
 
       - name: CovBeg
         uses: coverallsapp/github-action@master
