@@ -26,7 +26,7 @@ jobs:
 
         - name: update
           run: |
-            git submodule update —init
+            git submodule update --init
             sudo apt install lcov
             sudo apt install g++-7
         - name: test
@@ -37,7 +37,7 @@ jobs:
             cmake —build .
             ./RunTest
             lcov -t "banking" -o lcov.info -c -d .
-            lcov —remove lcov.info '/home/runner/work/lab5.0/lab5.0/third-party/gtest/*' -o lcov.info
+            lcov —remove lcov.info '/home/runner/work/lab05/lab05/third-party/gtest/*' -o lcov.info
             lcov —remove lcov.info '/usr/include/*' -o lcov.info
 
     Testing_Coverall:
@@ -47,7 +47,7 @@ jobs:
 
       - name: update
         run: |
-         git submodule update —init
+         git submodule update --init
          sudo apt install lcov
          sudo apt install g++-7
 
@@ -59,7 +59,7 @@ jobs:
            cmake —build .
            ./RunTest
            lcov -t "banking" -o lcov.info -c -d .
-           lcov —remove lcov.info '/home/runner/work/lab5/lab5/third-party/gtest/*' -o lcov.info ###
+           lcov —remove lcov.info '/home/runner/work/lab05/lab05/third-party/gtest/*' -o lcov.info ###
            lcov —remove lcov.info '/usr/include/*' -o lcov.info
 
       - name: CovBeg
