@@ -56,7 +56,7 @@ jobs:
         run: |
            mkdir _build && cd _build
            CXX=/usr/bin/g++-7 cmake -DCOVERAGE=1 ..
-           cmake —build .
+           cmake --build .
            ./RunTest
            lcov -t "banking" -o lcov.info -c -d .
            lcov --remove lcov.info '/home/runner/work/lab05/lab05/third-party/gtest/*' -o lcov.info ###
