@@ -17,7 +17,7 @@ jobs:
           run: |
             cd banking
             cmake -H. -B_build
-            cmake —build _build
+            cmake --build _build
 
     Testing:
       runs-on: ubuntu-latest
